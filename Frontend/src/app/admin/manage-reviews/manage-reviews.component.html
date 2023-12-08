@@ -1,0 +1,25 @@
+<div class="reviews">
+<h1 class="text-center">Pending Reviews</h1>
+<!-- If No pending review exists -->
+<mat-card *ngIf="pendingReviews.length==0" class="text-center width-100 no-reviews">
+    <h2>No pending review to manage!</h2>
+</mat-card>
+<!-- Reviews -->
+<div *ngFor="let review of pendingReviews" class="d-flex justify-content-center">
+    <mat-card class="review-container">
+        <mat-card-header>
+        <div mat-card-avatar class="profile-picture"></div>
+        <mat-card-title>{{review.user.firstName}} {{review.user.lastName}}</mat-card-title>
+        <mat-card-subtitle>{{review.reviewRating}} Star(s)</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <h2>{{review.reviewHeading}}</h2>
+            <p>{{review.reviewDescription}}</p>
+        </mat-card-content>
+        <mat-card-actions class="text-center">
+            <button class="btn btn-success" (click)="approveReview(review)">Approve</button>
+            <button class="btn btn-danger" (click)="discardReview(review)">Discard</button>
+          </mat-card-actions>
+    </mat-card>
+</div>
+</div>

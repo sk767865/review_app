@@ -1,0 +1,55 @@
+.container{
+    margin-top: 20px;
+}
+
+h1{
+    font-weight: bold;
+}
+
+#sub-text{
+    color: rgb(71, 69, 69);
+    font-size: 15px;
+}
+
+form{
+    margin-top: 30px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.half-width{
+    width: 48%;
+}
+
+.block{
+    display: block;
+}
+
+.left-margin{
+    margin-left: 20px;
+}
+
+#buttons{
+    margin-top: 20px;
+}
+
+.mat-black {
+    background-color: black;
+    color: #fff;
+}
+
+a{
+    margin-left: 10px;
+}
+
+.red{
+    color:red;
+}
+
+.redirect-text{
+    color: gray;
+    float: right;
+    margin-top: 20px;
+}

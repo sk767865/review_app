@@ -1,0 +1,30 @@
+.no-reviews{
+    background-color: white;
+}
+
+.reviews{
+    margin-top: 20px;
+}
+
+.width-100{
+    min-width: 100%;
+}
+
+.review-container{
+    margin-bottom: 20px;
+    width: 90%;
+    border-bottom: 0.2px solid black;
+}
+
+.reviews .profile-picture {
+    background-image: url('../../../assets/images/log.png');
+    background-size: cover;
+  }
+
+  mat-card{
+    background-color: rgb(255, 240, 250);
+}
+
+button{
+    margin-left: 20px;
+}

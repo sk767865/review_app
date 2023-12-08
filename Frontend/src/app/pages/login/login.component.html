@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1>Login</h1>
+            <p id="sub-text">Login with your username and password</p>
+            <form [formGroup]="loginForm" (ngSubmit)="formSubmit()">
+                 <!-- Username -->
+                 <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username" placeholder="Enter Username Here">
+                </mat-form-field>
+                <span class="red" *ngIf="username && username.invalid && (username.touched || username.dirty)">The Username is invalid</span>
+
+                 <!-- Password -->
+                 <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password" placeholder="Enter Password Here">
+                </mat-form-field>
+                <span class="red" *ngIf="password && password.invalid && (password.touched || password.dirty)">The Password is invalid</span>
+
+                <div class="containter text-center" id="buttons">
+                    <button type="submit" mat-raised-button [disabled]="loginForm.invalid" color="black">Submit</button>
+                    <a (click)="loginForm.reset()" mat-raised-button>Clear</a>
+                </div>
+            </form>
+            <a routerLink="/register" class="redirect-text">Dont have an account? Register!</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.mat-black {
+    background-color: rgba(17, 19, 1, 0.981);
+    color: #fff;
+}
+
+.mat-white {
+    background-color: #fff;
+    color: black;
+}
+
+span{
+    font-size: 15px;
+}
+
+a{  
+    color: #fff;
+    text-decoration: none;
+}
+
+.to-right {
+    flex: 1 1 auto;
+  }
+
+  .profile-picture{
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  #welcome{
+      margin-right: 10px;
+  }

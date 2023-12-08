@@ -1,0 +1,109 @@
+<!-- Top Area-->
+<div>
+    <div class="d-flex bd-highlight page-top">
+        <div class="p-2 flex-fill bd-highlight"></div>
+        <div class="p-2 flex-fill bd-highlight align-self-end">
+            <!-- Statistics -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="d-flex bd-highlight stats-container">
+                        <div class="d-flex justify-content-start flex-fill">
+                            <mat-icon class="stats-icon">settings_accessibility</mat-icon>
+                        </div>
+                        <div class="d-flex justify-content-start flex-fill">
+                            <div>
+                                <p class="text-center">{{usersCount}}</p>
+                                <p>Members</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex bd-highlight stats-container">
+                        <div class="d-flex justify-content-start flex-fill">
+                            <mat-icon class="stats-icon"><span class="material-symbols-outlined">
+                                production_quantity_limits
+                                </span></mat-icon>
+                        </div>
+                        <div class="d-flex justify-content-start flex-fill">
+                            <div>
+                                <p class="text-center">{{productsCount}}</p>
+                                <p>Products</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex bd-highlight stats-container">
+                        <div class="d-flex justify-content-start flex-fill">
+                            <mat-icon class="stats-icon">comment</mat-icon>
+                        </div>
+                        <div class="d-flex justify-content-start flex-fill">
+                            <div>
+                                <p class="text-center">{{reviewsCount}}</p>
+                                <p>Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 bd-highlight align-self-center main-text-container">
+            <div class="main-text">
+                <h1>Product community website</h1>
+              
+                <p> Place where a customer can visit, register themselves, <br>
+                    browse products, raise for review, post reviews</p>
+             </div>  
+        </div>
+    </div>
+  </div>
+<!-- Raise For Review Button-->
+<a routerLink="/raise-for-review" *ngIf="loginService.isLoggedIn() && loginService.isUser()">
+    <div class="side-buttons">
+        <div>
+            Raise for Review
+        </div>
+    </div>
+</a>
+<!-- Manage Reviews Button-->
+<a routerLink="/manage-reviews" *ngIf="loginService.isLoggedIn() && loginService.isAdmin()">
+    <div class="side-buttons manage-reviews">
+        <div>
+            Manage Reviews
+        </div>
+    </div>
+</a>
+<!-- Search Product Form -->
+<div *ngIf="loginService.isLoggedIn() && loginService.isUser()"  class="container col-md-5" id="form-container">
+    <h1 class="text-center">Search a Product</h1>
+            <mat-card>
+                <form [formGroup]="searchForm" (ngSubmit)="formSubmit()">
+                    <!-- Product Code -->
+                    <mat-form-field appearance="fill" class="full-width">
+                       <mat-label>Product Code</mat-label>
+                       <input matInput formControlName="productCode" placeholder="Enter Product Code Here">
+                   </mat-form-field>
+                   <span class="red" *ngIf="productCode && productCode.invalid && (productCode.touched || productCode.dirty)">The Product Code is invalid</span>
+   
+                   <!-- Product Brand -->
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Product Brand</mat-label>
+                    <input matInput formControlName="productBrand" placeholder="Enter Product Brand Here">
+                </mat-form-field>
+                <span class="red" *ngIf="productBrand && productBrand.invalid && (productBrand.touched || productBrand.dirty)">The Product Brand is invalid</span>
+
+                   <!-- Product Name -->
+                   <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Product Name</mat-label>
+                        <input matInput formControlName="productName" placeholder="Enter Product Name Here">
+                    </mat-form-field>
+                    <span class="red" *ngIf="productName && productName.invalid && (productName.touched || productName.dirty)">The Product Name is invalid</span>
+   
+                   <div class="containter text-center" id="buttons">
+                       <button type="submit" mat-raised-button [disabled]="searchForm.invalid" color="black">Submit</button>
+                       <a (click)="searchForm.reset()" mat-raised-button>Clear</a>
+                   </div>
+               </form>
+            </mat-card>
+</div>

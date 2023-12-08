@@ -1,0 +1,31 @@
+<a routerLink="/product-reviews/{{productData.productId}}">
+    <div class="product-container">
+        <div matRipple>
+            <mat-card>
+                <mat-card-title class="text-center">{{productData.productName}}</mat-card-title>
+                <mat-divider></mat-divider>
+                <mat-card-content class="d-flex flex-wrap justify-content-around">
+                    <div>
+                        <h3>Code:&nbsp;</h3><p>{{productData.productCode}}</p>
+                    </div>
+                    <div>
+                        <h3>Brand:&nbsp;</h3><p>{{productData.productBrand}}</p>
+                    </div>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+                <mat-card-footer>
+                    <div class="d-flex flex-wrap justify-content-around">
+                        <div>
+                            <mat-icon>star</mat-icon>
+                            <p class="d-flex align-items-center">{{productData.averageRating}}</p>
+                        </div>
+                        <div>
+                            <mat-icon>rate_review</mat-icon>
+                            <p class="d-flex align-items-center">{{productData.numberOfReviews}}</p>
+                        </div>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</a>

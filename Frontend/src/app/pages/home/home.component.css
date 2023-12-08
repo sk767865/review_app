@@ -1,0 +1,88 @@
+#top-area{
+    width: 100%;
+    
+    color: #fff;
+    background-image: url("../../../assets/images/backg.jpg");  
+    background-size: 100%;  
+    background-size: cover;
+    min-height: 250px;
+    margin-top: 0;
+}
+
+.page-top{
+    min-height: 300px;
+    color: #fff;
+    background-image: url("../../../assets/images/backg.jpg");  
+    background-size: 100%;  
+    background-size: cover;
+}
+
+.main-text {
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.main-text h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+.main-text p{
+    text-align: right;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.stats-container{
+    min-height: 50px;
+}
+
+.stats-icon{
+    font-size: 50px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+#buttons{
+    margin-top: 20px;
+}
+
+.mat-black {
+    background-color: black;
+    color: #fff;
+}
+
+#form-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+a{
+    margin-left: 10px;
+}
+
+.red{
+    color:red;
+}
+
+.side-buttons{
+    border: 1.5px solid rgb(172, 164, 164);
+    background-color: black;
+    padding: 6px;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    position: fixed;
+    width: 130px;
+    top:250px;
+    right: 0;
+    color: white;
+}
+
+.manage-reviews{
+    top: 300px;
+}

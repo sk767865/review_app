@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1>Raise For Review</h1>
+            <p id="sub-text">Raise a product for the community to review</p>
+
+          
+            <form [formGroup]="addProductFrom" (ngSubmit)="formSubmit()">
+                 <!-- Product Code -->
+                 <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Product Code</mat-label>
+                    <input matInput formControlName="productCode" placeholder="Enter Product Code Here">
+                </mat-form-field>
+                <span class="red" *ngIf="productCode && productCode.invalid && (productCode.touched || productCode.dirty)">Please enter a product code</span>
+
+                 <!-- Product Brand -->
+                 <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Product Brand</mat-label>
+                    <input matInput formControlName="productBrand" placeholder="Enter Product Brand Here">
+                </mat-form-field>
+                <span class="red" *ngIf="productBrand && productBrand.invalid && (productBrand.touched || productBrand.dirty)">Please enter a product brand</span>
+
+                 <!-- Product Name -->
+                 <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Product Name</mat-label>
+                    <input matInput formControlName="productName" placeholder="Enter Product Name Here">
+                </mat-form-field>
+                <span class="red" *ngIf="productName && productName.invalid && (productName.touched || productName.dirty)">Please enter a product name</span>
+
+                <div class="containter text-center" id="buttons">
+                    <button type="submit" mat-raised-button [disabled]="addProductFrom.invalid" color="black">Submit</button>
+                    <a (click)="addProductFrom.reset()" mat-raised-button>Clear</a>
+                </div>
+
+                    <mat-card style="margin-top: 10px;"  *ngIf="showSpinner">
+
+                        <mat-card-header style="margin-left: 80px;">
+                            <mat-card-title  >
+                               Wait for 30 Sec <br>
+                               <countdown  [config]="{leftTime:30}" ></countdown>
+                            </mat-card-title>
+
+                            <mat-card-subtitle>
+                                
+                                We cannot update Product Brand and Product Name linked with this Product Code 
+                                As it is already in the system <br>
+                                Transferring to the review page linked with this Product Code 
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+    
+                            <mat-spinner 
+                            style="margin-left: 290px;" 
+                            color="accent"
+                            mode="indeterminate"
+                          >
+                             </mat-spinner>
+    
+                        </mat-card-content>
+                    </mat-card>
+
+
+            </form>
+        </div>
+
+    
+
+    </div>
+
+
+   
+</div>

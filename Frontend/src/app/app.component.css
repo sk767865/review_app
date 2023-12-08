@@ -1,0 +1,11 @@
+.page-container{
+    position: relative;
+    min-height: 100vh;
+}
+main{
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 3.5rem;
+}

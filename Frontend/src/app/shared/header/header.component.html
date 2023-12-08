@@ -1,0 +1,28 @@
+<mat-toolbar color="black">
+  <!-- Home Button -->
+  <a routerLink="/" mat-icon-button>
+    <mat-icon>house</mat-icon>
+  </a>
+  <!-- Elements to the right of the header -->
+  <span class="to-right"></span>
+  <!-- Log in / Register-->
+  <a routerLink="/login" *ngIf="!loginService.isLoggedIn()">
+      <button mat-icon-button>
+        <mat-icon>input</mat-icon>
+      </button>
+      <span>Log in</span>
+  </a>
+      <span *ngIf="!loginService.isLoggedIn()">&nbsp;/&nbsp;</span>
+  <a routerLink="/register" *ngIf="!loginService.isLoggedIn()">
+      <span>Register</span>
+  </a>
+  <!-- Welcome user -->
+  <!-- Profile Picture -->
+  <img src="../../../assets/images/log.png" class="profile-picture" *ngIf="loginService.isLoggedIn()">
+  <!-- Welcome Text -->
+ <span *ngIf="loginService.isLoggedIn()" id="welcome">Welcome {{firstName}} {{lastName}}</span>
+  <!--Logout-->
+  <a (click)="logout()" *ngIf="loginService.isLoggedIn()" mat-raised-button color="white">
+    <span>Logout</span>
+</a>
+</mat-toolbar>

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h1>Registration</h1>
+            <p id="sub-text">Register with your username and password</p>
+            <form [formGroup]="registerationForm" (ngSubmit)="formSubmit()">
+                <!-- Username -->
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="username" placeholder="Enter Username Here">
+                </mat-form-field>
+                <span class="red" *ngIf="username && username.invalid && (username.touched || username.dirty)">The Username is invalid</span>
+
+                <!-- Email -->
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="email" placeholder="Enter Email Here">
+                </mat-form-field>
+                <span class="red block" *ngIf="email && email.invalid && (email.touched || email.dirty)">The Email is invalid</span>
+
+                <!-- First Name -->
+                <mat-form-field appearance="fill" class="half-width">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" placeholder="Enter First Name Here">
+                </mat-form-field>
+
+                <!-- Last Name-->
+                <mat-form-field appearance="fill" class="half-width left-margin">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Enter Last Name Here">
+                </mat-form-field>
+
+                <!-- Password -->
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password" placeholder="Enter PasswordHere">
+                </mat-form-field>
+                <span class="red" *ngIf="password && password.invalid && (password.touched || password.dirty)">The Password is invalid</span>
+
+                <div class="containter text-center" id="buttons">
+                    <button type="submit" mat-raised-button [disabled]="registerationForm.invalid" color="black">Submit</button>
+                    <a (click)="registerationForm.reset()" mat-raised-button>Clear</a>
+                </div>
+            </form>
+            <a routerLink="/login" class="redirect-text">Have an account already?</a>
+        </div>
+    </div>
+</div>
